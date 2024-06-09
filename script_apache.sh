@@ -2,7 +2,7 @@
 
 # Variables de configuration
 
-DB_SERVER="10.0.16.1"
+DB_SERVER="10.0.16.45"
 DB_NAME="auth_db"
 DB_USER="admin"
 DB_PASS="password"
