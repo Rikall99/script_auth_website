@@ -4,7 +4,7 @@
 
 DB_SERVER="10.0.16.45"
 DB_NAME="auth_db"
-DB_USER="admin"
+DB_USER="auth_user"
 DB_PASS="password"
 
 sudo apt update -y
@@ -45,7 +45,7 @@ if(\$_SERVER["REQUEST_METHOD"] == "POST"){{
     \$myusername = mysqli_real_escape_string(\$link, \$_POST['username']);
     \$mypassword = mysqli_real_escape_string(\$link, \$_POST['password']);
 
-    \$sql = "SELECT id FROM users WHERE username = '\$myusername' and password = '\$mypassword'";
+    \$sql = "SELECT id FROM users WHERE username = '\$myusername' and password = Password('\$mypassword')";
     \$result = mysqli_query(\$link, \$sql);
     \$row = mysqli_fetch_array(\$result, MYSQLI_ASSOC);
 
