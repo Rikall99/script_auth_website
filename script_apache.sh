@@ -8,7 +8,6 @@ DB_USER="auth_user"
 DB_PASS="password"
 
 sudo apt update
-sudo apt upgrade -y
 sudo apt install -y apache2 php php-mysqli
 
 sudo systemctl start apache2

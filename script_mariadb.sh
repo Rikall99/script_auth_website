@@ -2,7 +2,6 @@
 
 # Install MariaDB
 sudo apt update
-sudo apt upgrade -y
 sudo apt install -y mariadb-server
 
 # Secure MariaDB installation (optional but recommended)
