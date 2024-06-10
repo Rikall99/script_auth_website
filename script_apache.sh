@@ -124,12 +124,12 @@ if(\$_SERVER["REQUEST_METHOD"] == "POST"){{
 EOT
 
 # Créer une page de bienvenue en PHP
-cat <<EOT > /var/www/html/welcome.php
+cat <<EOT > /var/www/html/index.php
 <!DOCTYPE html>
 
 <html>
 <head>
-    <title>Welcome Page</title>
+    <title>Index Page</title>
     <style>
         @font-face {
             font-family: 'Marianne';
@@ -148,7 +148,7 @@ cat <<EOT > /var/www/html/welcome.php
     </style>
 </head>
 <body>
-    <h1>Welcome to the site!</h1>
+    <h1>Bienvenue sur notre site</h1>
 </body>
 </html>
 EOT
