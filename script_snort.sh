@@ -4,9 +4,9 @@ sudo apt update
 
 sudo mkdir /etc/snort
 
-wget https://raw.githubusercontent.com/Rikall99/script_auth_website/main/snort.debian.confing -O snort.debian.conf
-sudo mv snort.debian.conf /etc/snort/snort.debian.conf
-sudo chmod 600 /etc/snort/snort.debian.conf
+wget https://raw.githubusercontent.com/Rikall99/script_auth_website/main/snort.debian.config -O snort.debian.config
+sudo mv snort.debian.config /etc/snort/snort.debian.config
+sudo chmod 600 /etc/snort/snort.debian.config
 
 sudo apt install snort -y
 
