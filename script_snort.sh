@@ -4,11 +4,11 @@ sudo apt update
 
 sudo mkdir /etc/snort
 
-wget https://raw.githubusercontent.com/Rikall99/script_auth_website/main/snort.debian.config -O snort.debian.config
+sudo wget https://raw.githubusercontent.com/Rikall99/script_auth_website/main/snort.debian.config -O snort.debian.config
 sudo mv snort.debian.config /etc/snort/snort.debian.config
 sudo chmod 600 /etc/snort/snort.debian.config
 
-sudo apt install snort -y
+sudo DEBIAN_FRONTEND=noninteractive apt install snort -yq
 
 echo 'alert ip any any -> any any (msg:"SQL Injection Attempt"; content:"select"; nocase; classtype:attempted-recon; sid:1000001;)' | sudo tee -a /etc/snort/rules/local.rules
 echo 'alert ip any any -> any any (msg:”Possible SQL Injection — Inline Comments Detected”; flow:to_server,established; content:”GET”; nocase; http_method; content:”/”; http_uri; pcre:”/?.( — |#|/*)/”; sid:1000002;)' | sudo tee -a /etc/snort/rules/local.rules
