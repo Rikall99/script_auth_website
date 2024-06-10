@@ -35,7 +35,7 @@ CREATE TABLE users (
 );
 "
 
-# Optionally insert a test user
+# Insert a test user
 sudo mysql -e "
 USE auth_db;
 INSERT INTO users (username, password) VALUES ('user', PASSWORD('password'));

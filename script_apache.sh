@@ -36,7 +36,7 @@ define('DB_NAME', '$DB_NAME');
 EOT
 
 # Créer la page de login en PHP
-cat <<EOT > /var/www/html/index.php
+cat <<EOT > /var/www/html/login.php
 <?php
 include('config.php');
 
@@ -53,7 +53,7 @@ if(\$_SERVER["REQUEST_METHOD"] == "POST"){{
     \$count = mysqli_num_rows(\$result);
 
     if(\$count == 1) {{
-        header("location: welcome.php");
+        header("location: index.php");
     }}else {{
         \$error = "Your Login Name or Password is invalid";
     }}
@@ -64,6 +64,52 @@ if(\$_SERVER["REQUEST_METHOD"] == "POST"){{
 <html>
 <head>
     <title>Login Page</title>
+    <style>
+    @font-face {
+        font-family: 'Marianne';
+        src: url(https://www.info.gouv.fr/build/fonts/Marianne-Regular.4349f045.woff2) format('woff2');
+    } 
+    body {
+        font-family: Marianne;
+    }
+    h2 {
+        color: #333333;
+        text-align: center;
+        margin-top: 150px;
+    }
+    form {
+        width: 300px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f2f2f2;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    label {
+        display: block;
+        margin-bottom: 10px;
+    }
+    input[type="text"],
+    input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    input[type="submit"]:hover {
+        background-color: #45a049;
+    }
+    </style>
 </head>
 <body>
     <h2>Login Page</h2>
@@ -81,9 +127,24 @@ EOT
 # Créer une page de bienvenue en PHP
 cat <<EOT > /var/www/html/welcome.php
 <!DOCTYPE html>
+@font-face {
+    font-family: 'Marianne';
+    src: url(https://www.info.gouv.fr/build/fonts/Marianne-Regular.4349f045.woff2) format('woff2');
+} 
 <html>
 <head>
     <title>Welcome Page</title>
+    <style>
+        body {
+            background-color: #f2f2f2;
+            font-family: Marianne;
+        }
+        h1 {
+            color: #333333;
+            text-align: center;
+            margin-top: 150px;
+        }
+    </style>
 </head>
 <body>
     <h1>Welcome to the site!</h1>
