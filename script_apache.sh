@@ -91,7 +91,7 @@ if(\$_SERVER["REQUEST_METHOD"] == "POST"){{
     input[type="text"],
     input[type="password"] {
         width: 100%;
-        padding: 10px;
+        padding: 5px;
         margin-bottom: 20px;
         border: 1px solid #ccc;
         border-radius: 5px;
@@ -126,20 +126,22 @@ EOT
 # Créer une page de bienvenue en PHP
 cat <<EOT > /var/www/html/welcome.php
 <!DOCTYPE html>
-@font-face {
-    font-family: 'Marianne';
-    src: url(https://www.info.gouv.fr/build/fonts/Marianne-Regular.4349f045.woff2) format('woff2');
-} 
+
 <html>
 <head>
     <title>Welcome Page</title>
     <style>
+        @font-face {
+            font-family: 'Marianne';
+            src: url(https://www.info.gouv.fr/build/fonts/Marianne-Regular.4349f045.woff2) format('woff2');
+                    } 
         body {
             background-color: #f2f2f2;
             font-family: Marianne;
         }
         h1 {
             color: #333333;
+            flex-box: center;
             text-align: center;
             margin-top: 150px;
         }
